@@ -3,10 +3,15 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from datetime import date
 
+def add_items_to_db(phone, items):
+    cred = credentials.ApplicationDefault()
+    firebase_admin.initialize_app(cred, {
+        'projectId': 'hackathon2022'
+    })
 
-def add_items_to_db(phone, items, db):
+    db = firestore.client()
+
     today = date.today().strftime("%m%d%y")
-
     expiration = {}
 
     for item in items:
@@ -17,13 +22,6 @@ def add_items_to_db(phone, items, db):
     doc_ref = db.collection(u'users').document(phone)
     doc_ref.set(expiration)
 
-cred = credentials.ApplicationDefault()
-firebase_admin.initialize_app(cred, {
-    'projectId': 'hackathon2022'
-})
-
-db = firestore.client()
-
 phone = '7978421398'
 
 items = {
@@ -32,7 +30,7 @@ items = {
     'apple': 'room'
 }
 
-add_items_to_db(phone, items, db)
+add_items_to_db(phone, items)
 
 
 
