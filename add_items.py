@@ -15,7 +15,7 @@ def add_items_to_db(phone, items):
     expiration = {}
 
     for item in items:
-        foodexp = db.collection(u'expiration').document(item).get().to_dict()
+        foodexp = db.collection('expiration').document(item).get().to_dict()
 
         expiration[item + '_' + today + '_' + items[item]] = foodexp[items[item]]
 
