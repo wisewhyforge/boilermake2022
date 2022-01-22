@@ -20,7 +20,11 @@ def consumption(phone, item_to_delete):
         if dict.keys()[i] == item_to_delete:
             del dict[item_to_delete]
 
+    doc_ref = db.collection(u'users').document(phone)
+    doc_ref.set(dict)
 
+    
+    
 def add_items_to_db(phone, items):
     cred = credentials.ApplicationDefault()
     firebase_admin.initialize_app(cred, {
