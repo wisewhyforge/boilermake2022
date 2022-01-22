@@ -12,8 +12,8 @@ def decrement(phone, dict):
         else:
             dict[i] -= 1
 
-        for exp in listgone:
-            del dict[exp]
+    for exp in listgone:
+        del dict[exp]
 
     return dict
 
