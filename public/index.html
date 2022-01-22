@@ -41,9 +41,12 @@
   <body>
     <div id="message">
       <h1>Welcome to PerishMinder</h1>
+      <label for= "num"> Enter your Phone Number: </label>
+      <input type="", id="num", name="num", maxlength="10"></input>
+      <button id="enter"> Enter </button>
 
     </div>
-    
+
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -82,6 +85,11 @@
           loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
         }
       });
+
+      // var button = document.querySelector('#enter');
+
+
+
     </script>
   </body>
 </html>
