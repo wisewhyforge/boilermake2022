@@ -21,5 +21,8 @@ def delete_item(phone, item):
 
     doc.set(dict)
 
+phone = '7978421398'
 
-delete_item()
+item = 'apple_012222_frozen'
+
+delete_item(phone, item)
