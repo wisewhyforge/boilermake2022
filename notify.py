@@ -2,6 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from datetime import date
+from send_message import send_message
 
 def decrement(phone, dict):
     listgone = []
@@ -67,6 +68,6 @@ def notify(phone):
 
             message += '\n' + line
 
-    print(message)
+    send_message(phone, message)
 
-notify('7978421398')
+notify('7654907612')
