@@ -26,8 +26,8 @@ phone = '7978421398'
 
 items = {
     'onion': 'frozen',
-    'grape': 'refrigerated',
-    'apple': 'room'
+    'grape': 'frozen',
+    'apple': 'frozen'
 }
 
 add_items_to_db(phone, items)
