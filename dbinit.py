@@ -17,6 +17,7 @@ doc_ref.set({
 })
 x = doc_ref.get().to_dict()
 print(x)
+print('s')
 
 doc_ref = db.collection(u'users').document(u'aturing')
 doc_ref.set({
