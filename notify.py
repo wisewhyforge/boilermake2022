@@ -62,7 +62,7 @@ def notify(phone):
             if c == 0:
                 line += values[0] + ' are expired'
             else:
-                line += values[0] + ' are expiring in ' + c + ' days'
+                line += values[0] + ' are expiring in ' + str(c) + ' days'
 
             message += line + '\n'
 
