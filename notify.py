@@ -64,4 +64,4 @@ def notify(phone):
 
     print(message)
 
-notify()
+notify('7978421398')
