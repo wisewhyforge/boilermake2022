@@ -3,6 +3,24 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from datetime import date
 
+def consumption(phone, item_to_delete):
+
+    cred = credentials.ApplicationDefault()
+    firebase_admin.initialize_app(cred, {
+        'projectId': 'hackathon2022'
+    })
+
+    db = firestore.client()
+
+    collection = db.collection('users')
+    doc = collection.document(phone)
+    dict = doc.get().to_dict()
+
+    for i in range(len(dict)):
+        if dict.keys()[i] == item_to_delete:
+            del dict[item_to_delete]
+
+
 def add_items_to_db(phone, items):
     cred = credentials.ApplicationDefault()
     firebase_admin.initialize_app(cred, {
