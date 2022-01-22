@@ -36,18 +36,22 @@ def notify(phone):
     dict = decrement(phone, doc_ref.get().to_dict())
     doc_ref.set(dict)
 
-    almostexp = []
+    exp = []
+    exp1 = []
+    exp2 = []
+    exp3 = []
 
     for i in dict:
         if dict[i] <= 0:
-            almostexp[0].append(i)
+            exp.append(i)
         elif dict[i] == 1:
-            almostexp[1].append(i)
+            exp1.append(i)
         elif dict[i] == 2:
-            almostexp[2].append(i)
+            exp2.append(i)
         elif dict[i] == 3:
-            almostexp[3].append(i)
+            exp3.append(i)
 
+    almostexp = [exp, exp1, exp2, exp3]
     message = ""
 
     for c, _ in enumerate(almostexp):
