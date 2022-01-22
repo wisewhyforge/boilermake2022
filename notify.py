@@ -4,6 +4,7 @@ from firebase_admin import firestore
 from datetime import date
 from send_message import send_message
 
+
 def decrement(phone, dict):
     listgone = []
 
@@ -18,6 +19,7 @@ def decrement(phone, dict):
 
     return dict
 
+
 def get_status(status):
     if status == 'frozen':
         return 'Frozen '
@@ -25,6 +27,7 @@ def get_status(status):
         return 'Room Temperature '
     else:
         return 'Refrigerated '
+
 
 def notify(phone):
     cred = credentials.ApplicationDefault()
@@ -69,5 +72,6 @@ def notify(phone):
             message += '\n' + line
 
     send_message(phone, message)
+
 
 notify('7654907612')
