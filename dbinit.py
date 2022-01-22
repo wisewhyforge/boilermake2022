@@ -15,6 +15,7 @@ doc_ref.set({
     u'last': u'Lovelace',
     u'born': 1815
 })
+print(doc_ref)
 
 doc_ref = db.collection(u'users').document(u'aturing')
 doc_ref.set({
