@@ -1,6 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from datetime import date
 
 def decrement(phone, dict):
     listgone = []
@@ -52,7 +53,7 @@ def notify(phone):
             exp3.append(i)
 
     almostexp = [exp, exp1, exp2, exp3]
-    message = ""
+    message = date.today().strftime("%m/%d/%y") + " perishables report"
 
     for c, _ in enumerate(almostexp):
         for j in _:
@@ -64,7 +65,7 @@ def notify(phone):
             else:
                 line += values[0] + ' are expiring in ' + str(c) + ' days'
 
-            message += line + '\n'
+            message += '\n' + line
 
     print(message)
 
