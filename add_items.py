@@ -24,7 +24,7 @@ expiration = {}
 for item in items:
     foodexp = db.collection(u'expiration').document(item).get().to_dict()
 
-    expiration[item + today] = foodexp[item]
+    expiration[item + today] = foodexp[items[item]]
 
 doc_ref = db.collection(u'users').document(phone)
 doc_ref.set(expiration)
