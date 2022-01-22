@@ -11,15 +11,14 @@ def delete_item(phone, item):
 
     db = firestore.client()
 
-    collection = db.collection('users')
-    doc = collection.document(phone)
-    dict = doc.get().to_dict()
+    doc_ref = db.collection('users').collection.document(phone)
+    dict = doc_ref.get().to_dict()
 
     for i in dict:
-        if dict[i] == item:
+        if i == item:
             del dict[item]
 
-    doc.set(dict)
+    doc_ref.set(dict)
 
 phone = '7978421398'
 
