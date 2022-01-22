@@ -3,6 +3,20 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from datetime import date
 
+
+def add_items_to_db(phone, items, db):
+    today = date.today().strftime("%m%d%y")
+
+    expiration = {}
+
+    for item in items:
+        foodexp = db.collection(u'expiration').document(item).get().to_dict()
+
+        expiration[item + '_' + today] = foodexp[items[item]]
+
+    doc_ref = db.collection(u'users').document(phone)
+    doc_ref.set(expiration)
+
 cred = credentials.ApplicationDefault()
 firebase_admin.initialize_app(cred, {
     'projectId': 'hackathon2022'
@@ -10,7 +24,6 @@ firebase_admin.initialize_app(cred, {
 
 db = firestore.client()
 
-today = date.today().strftime("%m%d%y")
 phone = '7978421398'
 
 items = {
@@ -19,15 +32,8 @@ items = {
     'apple': 'room'
 }
 
-expiration = {}
+add_items_to_db(phone, items, db)
 
-for item in items:
-    foodexp = db.collection(u'expiration').document(item).get().to_dict()
-
-    expiration[item + '_' + today] = foodexp[items[item]]
-
-doc_ref = db.collection(u'users').document(phone)
-doc_ref.set(expiration)
 
 
 
