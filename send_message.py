@@ -8,8 +8,10 @@ def send_message(phone, message):
 
     client = Client(account_sid, auth_token)
 
+    num = '+1' + phone
+
     message = client.messages.create(
-        to="+1" + phone, # put your phonenumber
+        to=num, # put your phonenumber
         from_="+16067312344",
         body=message) # content
 
