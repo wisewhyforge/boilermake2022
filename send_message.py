@@ -3,7 +3,7 @@ from twilio.rest import Client
 
 def send_message(phone, message):
     account_sid = "AC105c669ce23ad6cb2ecbdaf18d7ed783"
-    auth_token = "0fdb51ac9866b17961002d15437a6eef"
+    auth_token = "1ac2cdb3b9ac6ecf6e0c7a693330d922"
 
     client = Client(account_sid, auth_token)
 
