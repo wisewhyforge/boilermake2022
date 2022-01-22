@@ -64,4 +64,5 @@ def notify(phone, db):
 
             message += '\n' + line
 
+    print(phone, message)
     send_message(phone, message)
