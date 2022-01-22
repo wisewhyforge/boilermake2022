@@ -17,6 +17,7 @@ def delete_item(phone, item):
     for i in dict:
         if i == item:
             del dict[item]
+            break
 
     doc_ref.set(dict)
 
