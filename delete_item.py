@@ -11,7 +11,7 @@ def delete_item(phone, item):
 
     db = firestore.client()
 
-    doc_ref = db.collection('users').collection.document(phone)
+    doc_ref = db.collection('users').document(phone)
     dict = doc_ref.get().to_dict()
 
     for i in dict:
