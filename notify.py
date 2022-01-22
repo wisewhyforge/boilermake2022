@@ -50,7 +50,7 @@ def notify(phone, db):
             exp3.append(i)
 
     almostexp = [exp, exp1, exp2, exp3]
-    message = date.today().strftime("%m/%d/%y") + " perishables report"
+    message = date.today().strftime("%m/%d/%y") + " PerishMinder report"
 
     for c, _ in enumerate(almostexp):
         for j in _:
