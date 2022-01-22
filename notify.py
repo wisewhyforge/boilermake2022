@@ -1,6 +1,9 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from datetime import date
+from send_message import send_message
+
 
 def decrement(phone, dict):
     listgone = []
@@ -11,18 +14,20 @@ def decrement(phone, dict):
         else:
             dict[i] -= 1
 
-        for exp in listgone:
-            del dict[exp]
+    for exp in listgone:
+        del dict[exp]
 
     return dict
+
 
 def get_status(status):
     if status == 'frozen':
         return 'Frozen '
     elif status == 'room':
-        return 'Room Temperature '
+        return 'Room temperature '
     else:
         return 'Refrigerated '
+
 
 def notify(phone):
     cred = credentials.ApplicationDefault()
@@ -52,7 +57,7 @@ def notify(phone):
             exp3.append(i)
 
     almostexp = [exp, exp1, exp2, exp3]
-    message = ""
+    message = date.today().strftime("%m/%d/%y") + " perishables report"
 
     for c, _ in enumerate(almostexp):
         for j in _:
@@ -60,12 +65,13 @@ def notify(phone):
             line = get_status(values[2])
 
             if c == 0:
-                line += values[0] + ' are expired'
+                line += values[0] + '(s) are expired'
             else:
-                line += values[0] + ' are expiring in ' + c + ' days'
+                line += values[0] + '(s) are expiring in ' + str(c) + ' days'
 
-            message += line + '\n'
+            message += '\n' + line
 
-    print(message)
+    send_message(phone, message)
 
-notify('7978421398')
+
+notify('7654907612')
