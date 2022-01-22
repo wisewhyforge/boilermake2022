@@ -72,6 +72,3 @@ def notify(phone):
             message += '\n' + line
 
     send_message(phone, message)
-
-
-notify('7654907612')

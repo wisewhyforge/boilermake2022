@@ -21,15 +21,3 @@ def add_items_to_db(phone, items):
 
     doc_ref = db.collection(u'users').document(phone)
     doc_ref.set(expiration)
-
-
-
-phone = '7654907612'
-
-items = {
-    'onion': 'refrigerated',
-    'grape': 'room',
-    'apple': 'room'
-}
-
-add_items_to_db(phone, items)
