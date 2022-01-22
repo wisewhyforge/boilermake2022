@@ -29,14 +29,7 @@ def get_status(status):
         return 'Refrigerated '
 
 
-def notify(phone):
-    cred = credentials.ApplicationDefault()
-    firebase_admin.initialize_app(cred, {
-        'projectId': 'hackathon2022'
-    })
-
-    db = firestore.client()
-
+def notify(phone, db):
     doc_ref = db.collection('users').document(phone)
     dict = decrement(phone, doc_ref.get().to_dict())
     doc_ref.set(dict)
