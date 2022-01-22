@@ -6,21 +6,20 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 
-if __name__ == '__main__':
-    cred = credentials.ApplicationDefault()
-    firebase_admin.initialize_app(cred, {
-        'projectId': 'hackathon2022'
-    })
+cred = credentials.ApplicationDefault()
+firebase_admin.initialize_app(cred, {
+    'projectId': 'hackathon2022'
+})
 
-    db = firestore.client()
+db = firestore.client()
 
-    phone = '3175725959'
+phone = '3175725959'
 
-    items = {
-        'onion': 'room',
-        'grape': 'room',
-        'apple': 'room'
-    }
+items = {
+    'onion': 'room',
+    'grape': 'room',
+    'apple': 'room'
+}
 
-    add_items_to_db(phone, items, db)
-    notify(phone, db)
+add_items_to_db(phone, items, db)
+notify(phone, db)
