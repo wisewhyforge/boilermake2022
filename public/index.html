@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Welcome to PerishMinder</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.6.4/firebase-app-compat.js"></script>
@@ -17,8 +17,7 @@
     <script defer src="/__/firebase/9.6.4/firebase-analytics-compat.js"></script>
     <script defer src="/__/firebase/9.6.4/firebase-remote-config-compat.js"></script>
     <script defer src="/__/firebase/9.6.4/firebase-performance-compat.js"></script>
-    <script defer src="/__/firebase/9.6.4/firebase-auth.js"></script>
-    <!-- 
+    <!--
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
@@ -43,14 +42,11 @@
   <body>
     
     <div id="message">
-        <!--
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete Goddamn</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    -->
-    <input type="file" accept="image/*">
-    <!--
+      <h1>Welcome to PerishMinder</h1>
+
+    </div>
+    
+
     <script>
         /*
       document.addEventListener('DOMContentLoaded', function() {
@@ -73,13 +69,13 @@
         try {
           let app = firebase.app();
           let features = [
-            'auth', 
-            'database', 
+            'auth',
+            'database',
             'firestore',
             'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
+            'messaging',
+            'storage',
+            'analytics',
             'remoteConfig',
             'performance',
           ].filter(feature => typeof app[feature] === 'function');
