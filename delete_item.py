@@ -1,7 +1,6 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-from datetime import date
 
 def delete_item(phone, item):
     cred = credentials.ApplicationDefault()
