@@ -24,7 +24,7 @@ def get_status(status):
     if status == 'frozen':
         return 'Frozen '
     elif status == 'room':
-        return 'Room Temperature '
+        return 'Room temperature '
     else:
         return 'Refrigerated '
 
@@ -65,9 +65,9 @@ def notify(phone):
             line = get_status(values[2])
 
             if c == 0:
-                line += values[0] + ' are expired'
+                line += values[0] + '(s) are expired'
             else:
-                line += values[0] + ' are expiring in ' + str(c) + ' days'
+                line += values[0] + '(s) are expiring in ' + str(c) + ' days'
 
             message += '\n' + line
 

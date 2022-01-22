@@ -15,6 +15,3 @@ def send_message(phone, message):
         body=message)
 
     print(message.sid)
-
-if __name__ == '__main__':
-    send_message(7654907612, 'test')
