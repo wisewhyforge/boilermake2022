@@ -27,9 +27,9 @@ def add_items_to_db(phone, items):
 phone = '7654907612'
 
 items = {
-    'onion': 'frozen',
-    'grape': 'frozen',
-    'apple': 'frozen'
+    'onion': 'room',
+    'grape': 'room',
+    'apple': 'refrigerated'
 }
 
 add_items_to_db(phone, items)
