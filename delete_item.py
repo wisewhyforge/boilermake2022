@@ -19,9 +19,3 @@ def delete_item(phone, item):
             break
 
     doc_ref.set(dict)
-
-phone = '7978421398'
-
-item = 'apple_012222_frozen'
-
-delete_item(phone, item)
