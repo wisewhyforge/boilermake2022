@@ -66,3 +66,4 @@ node_modules/
 .env
 
 hackathon2022-a61bf4731c84.json
+*.json
