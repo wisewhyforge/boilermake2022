@@ -3,7 +3,14 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from datetime import date
 
-def add_items_to_db(phone, items, db):
+def add_items_to_db(phone, items):
+    cred = credentials.ApplicationDefault()
+    firebase_admin.initialize_app(cred, {
+        'projectId': 'hackathon2022'
+    })
+
+    db = firestore.client()
+
     today = date.today().strftime("%m%d%y")
     expiration = {}
 
